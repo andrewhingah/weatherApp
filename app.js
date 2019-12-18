@@ -14,7 +14,7 @@ window.addEventListener('load', () => {
 
             const proxy = 'https://cors-anywhere.herokuapp.com/';
             const apiKey = '<your_api_key>';
-            const api = `${proxy}https://api.darksky.net/${apiKey}/${lat},${long}`;
+            const api = `${proxy}https://api.darksky.net/forecast/${apiKey}/${lat},${long}`;
             fetch(api).then(response => {
                 return response.json()
             })
@@ -30,6 +30,7 @@ window.addEventListener('load', () => {
 
                 //Set Icon
                 setIcons(icon, document.querySelector('.icon'));
+
                 //Change to celcius
                 temperatureSection.addEventListener('click', () => {
                     if(temperatureSpan.textContent === 'F') {
